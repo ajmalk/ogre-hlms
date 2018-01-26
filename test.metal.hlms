@@ -1,0 +1,17 @@
+blah blah blah
+
+// "hi this is a test"
+
+'hey this is another test'
+
+@property( use_envprobe_map )    envMapIdx            = material.envMapIdx;
+sadasdasd
+@end
+
+// "sjkdnoaj"
+
+{{!-- only output author name if an author exists --}}
+
+{{! only output author name if an author exists --}}
+
+@property( use_envprobe_map )    envMapIdx            = material.envMapIdx; @end

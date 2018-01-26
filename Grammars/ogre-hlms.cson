@@ -1,0 +1,103 @@
+'name': 'Ogre HLMS templates'
+'scopeName': 'source.metal.ogrehlms'
+'limitLineLength': false
+'fileTypes': [
+  'metal'
+  'hlms'
+]
+
+'patterns': [
+  {'include': "#ogrehlms"}
+]
+
+'repository':
+  'ogrehlms':
+    {
+      'patterns': [
+        {'include': "#property"}
+        {'include': "#foreach"}
+        {'include': "#piece"}
+        {'include': "#single_param_funcs"}
+        {'include': "#double_param_funcs"}
+        {'include': "#variable"}
+        {'include': "source.cpp"}
+      ]
+    }
+  'variable':
+    {
+      'match': '@[a-zA-Z_][a-zA-Z0-9_]*'
+      'name': 'entity.name.tag.ogrehlms',
+    }
+  'property':
+    {
+      'begin': '(@(property)[\(])(.*?)([\)])'
+      'beginCaptures':
+        '1':
+          'name': 'entity.name.tag.ogrehlms'
+        '3':
+          'name': 'comment.block.ogrehlms'
+        '4':
+          'name': 'entity.name.tag.ogrehlms'
+      'end': '(@end)'
+      'endCaptures':
+        '1':
+          'name': 'entity.name.tag.ogrehlms',
+      'name': 'meta.tag.ogrehlms'
+      'patterns': ['include': "#ogrehlms"]
+    }
+  'foreach':
+    {
+      'begin': '(@(foreach)[\(])(.*?)([\)])'
+      'beginCaptures':
+        '1':
+          'name': 'entity.name.tag.ogrehlms'
+        '3':
+          'name': 'comment.block.ogrehlms'
+        '4':
+          'name': 'entity.name.tag.ogrehlms'
+      'end': '(@end)'
+      'endCaptures':
+        '1':
+          'name': 'entity.name.tag.ogrehlms',
+      'patterns': ['include': "#ogrehlms"]
+    }
+  'piece':
+    {
+      'begin': '(@(piece)[\(])(.*?)([\)])'
+      'beginCaptures':
+        '1':
+          'name': 'entity.name.tag.ogrehlms'
+        '3':
+          'name': 'comment.block.ogrehlms'
+        '4':
+          'name': 'entity.name.tag.ogrehlms'
+      'end': '(@end)'
+      'endCaptures':
+        '1':
+          'name': 'entity.name.tag.ogrehlms',
+      'patterns': ['include': "#ogrehlms"]
+    }
+  'single_param_funcs':
+    {
+      'begin': '(@(value|counter|insertpiece)[\(])'
+      'beginCaptures':
+        '1':
+          'name': 'entity.name.tag.ogrehlms'
+      'end': '([\)])'
+      'endCaptures':
+        '1':
+          'name': 'entity.name.tag.ogrehlms',
+      'name': 'comment.block.ogrehlms'
+    }
+  'double_param_funcs':
+    {
+      'begin': '(@(set|add|sub|mul|div|mod|min|max|pset|padd|psub|pmul|pdiv|pmod|pmin|pmax)[\(])'
+      'beginCaptures':
+        '1':
+          'name': 'entity.name.tag.ogrehlms'
+      'end': '([\)])'
+      'endCaptures':
+        '1':
+          'name': 'entity.name.tag.ogrehlms',
+      'name': 'comment.block.ogrehlms'
+    }

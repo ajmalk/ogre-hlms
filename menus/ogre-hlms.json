@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle ogre-hlms",
+        "command": "ogre-hlms:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "ogre-hlms",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "ogre-hlms:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
